@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>
+        DIY SQL ATTACKS
+    </title>
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="sql.js"></script>
+    <link type="text/css" href="sql.css" rel="stylesheet" />
+</head>
+<body>
+<div id="head">
+    <div id="clients_info">
+        <h2>Clients' Information</h2>
+        <table id="table1">
+            <tr>
+                <th>id</th><th>name</th><th>passwd</th><th>age</th><th>job</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+    </div>
+    <div id="results">
+        <h2>Results On Attacks</h2>
+        <table id="table2" style="display:none">
+            <tr>
+                <th>id</th><th>name</th><th>passwd</th><th>age</th><th>job</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+    	<p id="no_results" style="color:red;font-style:italic;float:right;display:none">No Results Matched!</p>
+    </div>
+</div>
+<hr>
+<div id="nav">
+    <div class="menu" onClick="javascript:ShowItem('blind')">
+        <a href="javascript:void(0)" id="blind_title">+ Blind Injection</a>
+        <hr style="border:none;border-top:1px solid skyblue;margin-bottom:2px"/>
+    </div>
+    <div class="items">
+        <ul id="blind_item" style="display:none">
+            <li><a href="javascript:void(0)" onClick="javascript:ShowQuery('content')">Content-based</a></li>
+            <li><a href="javascript:void(0)" onClick="javascript:ShowQuery('time')">Time-based</a></li>
+        </ul>
+    </div>
+    <div class="menu" onClick="javascript:ShowItem('normal')">
+        <a href="javascript:void(0)" id="normal_title">+ Normal Injection</a>
+        <hr style="border:none;border-top:1px solid skyblue;margin-bottom:2px"/>
+    </div>
+    <div class="items">
+        <ul id="normal_item" style="display:none;">
+            <li><a href="javascript:void(0)" onClick="javascript:ShowQuery('A')">A</a></li>
+            <li><a href="javascript:void(0)" onClick="javascript:ShowQuery('B')">B</a></li>
+
+        </ul>
+    </div>
+
+</div>
+
+<div id="section">
+<div id="blind_input">
+    <div id="content" class="query_section">
+        name:<input id="name_content" type="text" value=""/>
+        password:<input id="passwd_content" type="password"/>
+        age:<input id="age_content" type="text" value=""/>
+        job:<input id="job_content" type="text" value=""/>
+    </div>
+    <div id="time" class="query_section">
+	mysql cmd:<input id="cmd_time" type="text" value="" style="width:800px" />
+    </div>
+</div>
+<div id="normal_input">
+    <div id="A" class="query_section">
+	A:<input id="a_A" type="text" value="" />
+    </div>
+    <div id="B" class="query_section">
+	B:<input id="b_B" type="text" value="" />
+    </div>
+</div>
+    <center>
+        <div id="buttons">
+            <input id="query_btn" type="button" value="Query" style="background-color:#0769AD"/>
+	    <input id="clear_btn" type="button" value="Clear" style="background-color:#0769AD" />
+        </div>
+    </center>
+</div>
+<input id="try_me" type="button" value="Try Me" style="background-color:#0769AD;width:55px;display:none" />
+
+<div id="footer">
+    BUILD YOUR DREAMS
+</div>
+</body>
+</html>
